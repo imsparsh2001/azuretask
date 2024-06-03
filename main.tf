@@ -14,14 +14,14 @@ provider "azurerm" {
 }
 
 module "resource_group" {
-  source              = "git::https://github.com/imsparsh2001/azuretask.git/modules/resource_group"
+  source              = "git::https://github.com/imsparsh2001/terraform-modules.git/modules/resource_group"
   resource_group_name = var.resource_group_name
   location            = var.location
 }
 
 module "virtual_network" {
 #   source              = "./modules/virtual-network"
-  source              = "git::https://github.com/imsparsh2001/azuretask.git/modules/virtual-network"
+  source              = "git::https://github.com/imsparsh2001/terraform-modules.git/modules/virtual-network"
   resource_group_name = module.resource_group.resource_group_name
   location            = var.location
   vnet_name           = var.vnet_name
